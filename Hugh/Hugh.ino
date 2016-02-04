@@ -1,27 +1,28 @@
 // Hugh's Arduino
 
-const int ps = 10; // this is the pressure sensor
+
 const int dcm = 9;  // this is the motor. 
-const int timer = 300; // this is how much time for delay. 
+const int timer = 2100; // this is how much time for delay. 
 int var = 0; // placeholder
-int go = 30;
+int go = 9;
 
 
 void setup() {
   // put your setup code here, to run once:
-serial.Begin(9600);
-  pinMode (ps, INPUT);
+Serial.begin(19200);
   pinMode (dcm, OUTPUT);
 
 }
 
 void loop() {
 
-  var = analogRead(ps); //var is equal to whatever the sensor reads. 
-  serial.println(var);
-  vor = map(var, 0, 900, 0, 255);
+  var = analogRead(0); //var is equal to whatever the sensor reads. 
+  Serial.println(var);
+ // var = map(var, 0, 900, 0, 255);
   float x = 0;
-  if (var > go){
+  float timepiece = 0; //this will keep time for the car to drive. 
+  float returning = 100; //so the car stops/ 
+  if (var < go){
     x = 1;
   } else {}
 
@@ -30,7 +31,7 @@ void loop() {
     delay(timer);
     digitalWrite(dcm, LOW);
     x = 0;
-  } else {}m
+  } else {}
 
   
   // put your main code here, to run repeatedly:

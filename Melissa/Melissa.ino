@@ -1,34 +1,36 @@
 // Melissa's Arduino
-//this is the arduino with the servo arm swing thing. 
+//this is the arduino with the servo arm swing thing.
 #include <Servo.h>
 
 
 const int servo = 9;
-const int sensor = 10;
 int var = 0; // placeholder
-int go = 30;
+int go = 1;
 
 Servo myservo;
 
 
 void setup() {
   // put your setup code here, to run once:
-serial.begin(9600);
-myservo.attach(servo);
-pinMode(sensor, INPUT);
+  Serial.begin(38400);
+  myservo.attach(servo);
 
-  
+
 
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  var = analogRead(sensor);
-  serial.println(var);
+  var = analogRead(0);
+  Serial.println(var);
+  float pos = 0;
   var = map(var, 0, 900, 0, 180);
-if (var > go){
-  myservo.write (180);
-}
-  
+  if (var > go) {
+    pos = var;
+  } else {
+    pos = 0;
+  }
+  myservo.write(pos);
+
 
 }
