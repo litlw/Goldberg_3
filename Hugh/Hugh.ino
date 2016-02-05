@@ -20,8 +20,6 @@ void loop() {
   Serial.println(var);
  // var = map(var, 0, 900, 0, 255);
   float x = 0;
-  float timepiece = 0; //this will keep time for the car to drive. 
-  float returning = 100; //so the car stops/ 
   if (var < go){
     x = 1;
   } else {}
