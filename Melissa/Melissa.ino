@@ -26,7 +26,8 @@ void loop() {
   float pos = 0;
   var = map(var, 0, 900, 0, 180);
   if (var > go) {
-    pos = var;
+    pos = 60;
+    delay(3);
   } else {
     pos = 0;
   }
