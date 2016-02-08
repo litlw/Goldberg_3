@@ -2,7 +2,7 @@
 
 
 const int dcm = 9;  // this is the motor. 
-const int timer = 2100; // this is how much time for delay. 
+const int timer = 9000; // this is how much time for delay. 
 int var = 0; // placeholder
 int go = 9;
 
